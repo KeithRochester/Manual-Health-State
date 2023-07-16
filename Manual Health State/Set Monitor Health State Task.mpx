@@ -1,0 +1,25 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Monitoring>
+    <Tasks>
+      <Task ID="Manual.Health.State.SetMonitorState.Task" Accessibility="Public" Enabled="true" Target="System!System.Entity" Remotable="true" Timeout="30" >
+        <Category>Custom</Category>
+        <WriteAction ID="WA" TypeID="Manual.Health.State.SetMonitorState">
+          <ManagementGroupId>$Target/ManagementGroup/Id$</ManagementGroupId>
+          <MonitorId>e3ab86a1-34fa-35b5-b864-da4db993c0f5</MonitorId> <!--System.Health.EntityState-->
+          <ManagedEntityId>$Target/Id$</ManagedEntityId>
+          <HealthState>Success</HealthState>
+        </WriteAction>
+      </Task>
+    </Tasks>
+  </Monitoring>
+<LanguagePacks>
+  <LanguagePack ID="ENU" IsDefault="true">
+    <DisplayStrings>
+      <DisplayString ElementID="Manual.Health.State.SetMonitorState.Task">
+        <Name>Set Entity Health Monitor State</Name>
+        <Description>Tasks sets the health state of Entity Health (System.Health.EntityState). Defaults to 'Success'</Description>
+      </DisplayString>
+    </DisplayStrings>
+  </LanguagePack>
+</LanguagePacks>
+</ManagementPackFragment>

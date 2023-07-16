@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?><ManagementPack xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="2.0">
+  <Manifest>
+    <Identity>
+      <ID>Manual.Health.State</ID>
+      <Version>1.0.0.20</Version>
+    </Identity>
+    <Name>Manual Health State</Name>
+    <References>
+      <Reference Alias="Health">
+        <ID>System.Health.Library</ID>
+        <Version>7.0.8433.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="System">
+        <ID>System.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <TypeDefinitions>
+    <ModuleTypes>
+      <WriteActionModuleType ID="Manual.Health.State.SetMonitorState" Accessibility="Public" Batching="false">
+        <Configuration>
+          <IncludeSchemaTypes>
+            <SchemaType>Health!System.Health.AlertSchema</SchemaType>
+          </IncludeSchemaTypes><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ManagementGroupId" type="xsd:string" /><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MonitorId" type="xsd:string" /><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ManagedEntityId" type="xsd:string" /><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HealthState" type="System.Health.AlertHealthState" /></Configuration>
+        <OverrideableParameters>
+          <OverrideableParameter ID="HealthState" Selector="$Config/HealthState$" ParameterType="string" />
+        </OverrideableParameters>
+        <ModuleImplementation Isolation="Any">
+          <Native>
+            <ClassID>44cbc334-8b5f-4cb6-bee0-6bdcbc80e8d5</ClassID>
+          </Native>
+        </ModuleImplementation>
+        <InputType>System!System.BaseData</InputType>
+      </WriteActionModuleType>
+    </ModuleTypes>
+  </TypeDefinitions>
+  <Monitoring>
+    <Tasks>
+      <Task ID="Manual.Health.State.SetMonitorState.Task" Accessibility="Public" Enabled="true" Target="System!System.Entity" Timeout="30" Remotable="true">
+        <Category>Custom</Category>
+        <WriteAction ID="WA" TypeID="Manual.Health.State.SetMonitorState"><ManagementGroupId>$Target/ManagementGroup/Id$</ManagementGroupId><MonitorId>e3ab86a1-34fa-35b5-b864-da4db993c0f5</MonitorId><ManagedEntityId>$Target/Id$</ManagedEntityId><HealthState>Success</HealthState></WriteAction>
+      </Task>
+    </Tasks>
+  </Monitoring>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Manual.Health.State">
+          <Name>Manual Health State</Name>
+          <Description>Manual Health State</Description>
+        </DisplayString>
+        <DisplayString ElementID="Manual.Health.State.SetMonitorState.Task">
+          <Name>Set Entity Health Monitor State</Name>
+          <Description>Tasks sets the health state of Entity Health (System.Health.EntityState). Defaults to 'Success'</Description>
+        </DisplayString>
+        <DisplayString ElementID="Manual.Health.State.SetMonitorState">
+          <Name>Set Monitor Health State</Name>
+          <Description>Sets the health state of the monitor.</Description>
+        </DisplayString>
+        <DisplayString ElementID="Manual.Health.State.SetMonitorState" SubElementID="HealthState">
+          <Name>Health State</Name>
+          <Description>Health State to set the monitor to. 'Success', 'Warning', or 'Error'.</Description>
+        </DisplayString>
+      </DisplayStrings>
+      <KnowledgeArticles>
+        <KnowledgeArticle ElementID="Manual.Health.State" Visible="true">
+          <MamlContent><maml:section xmlns:maml="http://schemas.microsoft.com/maml/2004/10"><maml:title>Manual Health State</maml:title><maml:para>
+                Documentation and the latest version can be found on GitHub -<maml:navigationLink><maml:linkText>https://github.com/KeithRochester/Manual-Health-State.</maml:linkText><maml:uri href="https://github.com/KeithRochester/Manual-Health-State" /></maml:navigationLink>. 
+              </maml:para><maml:para>
+                If you have any questions or suggestions, please send me a message <maml:navigationLink><maml:linkText>keith.rochester@unit92.com</maml:linkText><maml:uri href="mailto:keith.rochester@unit92.com?subject=Standard%20Monitoring%20Framework" /></maml:navigationLink></maml:para></maml:section></MamlContent>
+        </KnowledgeArticle>
+      </KnowledgeArticles>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPack>

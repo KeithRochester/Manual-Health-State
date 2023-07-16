@@ -1,0 +1,7 @@
+Set Monitor Health State Write Action.mpx*Manual.Health.State.SetMonitorState*4*8*WriteActionModuleType
+Set Monitor Health State Task.mpx*Manual.Health.State.SetMonitorState.Task*4*8*Task
+ManagementPack.mpx*Manual.Health.State*5*10*DisplayString
+Set Monitor Health State Task.mpx*Manual.Health.State.SetMonitorState.Task*18*8*DisplayString
+Set Monitor Health State Write Action.mpx*Manual.Health.State.SetMonitorState*33*10*DisplayString
+Set Monitor Health State Write Action.mpx*Manual.Health.State.SetMonitorState*37*10*DisplayString*SubElementID*HealthState
+ManagementPack.mpx*Manual.Health.State*11*10*KnowledgeArticle
