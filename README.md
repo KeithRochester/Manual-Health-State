@@ -2,8 +2,8 @@
 
 Agent task to set the state of the 'Entity Health' monitor of any object. Typically I've used this for making dashboards reflect the true state of the environment and for demo'ing MPs.
 
-[MP Download](MPs)
-[Visual Studio Solution](<Manual Health State>)
+* [MP Download](MPs)
+* [Visual Studio Solution](<Manual Health State>)
 
 ## Set Monitor Health State Task
 
