@@ -2,9 +2,12 @@
 
 Agent task to set the state of the 'Entity Health' monitor of any object. Typically I've used this for making dashboards reflect the true state of the environment and for demo'ing MPs.
 
+[MP Download](MPs)
+[Visual Studio Solution](<Manual Health State>)
+
 ## Set Monitor Health State Task
 
-Targeted at System.Entity has an overridable parameter 'HealthState'. Which is the state to set the monitor to. 'Success', 'Warning', or 'Error'. Default is 'Success'. The tasks sets the state of Entity Health (System.Health.EntityState).
+Targeted at System.Entity has an overridable parameter 'Health State'. Which is the state to set the monitor to. 'Success', 'Warning', or 'Error'. Default is 'Success'. The tasks sets the state of 'Entity Health' (System.Health.EntityState).
 
 ## Using the Task
 
