@@ -5,6 +5,8 @@ Agent task to set the state of the 'Entity Health' monitor of any object. Typica
 * [MP Download](MPs)
 * [Visual Studio Solution](<Manual Health State>)
 
+> **Remember**: 'Entity Health' is an aggregate monitor. It won't update it's health state unless a child monitor changes health state. If you set it to warning, it won't change state until one of it's children changes state or you set it again.  
+
 ## Set Monitor Health State Task
 
 Targeted at System.Entity has an overridable parameter 'Health State'. Which is the state to set the monitor to. 'Success', 'Warning', or 'Error'. Default is 'Success'. The tasks sets the state of 'Entity Health' (System.Health.EntityState).
