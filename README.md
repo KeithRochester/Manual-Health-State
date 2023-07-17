@@ -23,4 +23,4 @@ Targeted at System.Entity has an overridable parameter 'Health State'. Which is 
 ![Alt text](<Screencaps/Set Entity Health Monitor State Task Override.png>)
 
 >After running the task, Health Explorer shows the 'Entity Health' monitor as warning (the value I overrode the task with).   
-![Alt text](<Health Explorer After.png>)
+![Alt text](<Screencaps/Health Explorer After.png>)
